@@ -18,3 +18,12 @@ Usługa `train` wczytuje ustawienia z `.env.train`. Katalogi `data`, `models` i 
 docker compose build train
 docker compose config
 ```
+
+## Zadanie 3 - trening w kontenerze
+
+Moduł `src/pipeline.py` uruchamia kolejno trening i ewaluację. Model oraz raport pozostają w katalogach hosta dzięki wolumenom.
+
+```bash
+docker compose up --build
+ls -lh models results
+```

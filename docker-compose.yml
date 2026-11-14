@@ -4,6 +4,7 @@ services:
       context: .
       dockerfile: Dockerfile
     image: ium-lab5:train
+    command: ["python", "src/pipeline.py"]
     env_file:
       - .env.train
     # Dane, model i wyniki pozostają na hoście po usunięciu kontenera.
