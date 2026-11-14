@@ -27,3 +27,13 @@ Moduł `src/pipeline.py` uruchamia kolejno trening i ewaluację. Model oraz rapo
 docker compose up --build
 ls -lh models results
 ```
+
+## Zadanie 4 - druga usługa i limity zasobów
+
+Usługa `visualize` udostępnia zapisane wyniki na porcie 8080. Jej uruchomienie zależy od usługi `train`, dla której ustawiono limit 512 MB pamięci i jednego rdzenia procesora.
+
+```bash
+docker compose up --build -d
+docker stats --no-stream l5-train-1
+curl http://localhost:8080/wyniki.txt
+```
