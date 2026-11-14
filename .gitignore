@@ -11,3 +11,4 @@ models/*
 results/*
 !results/.gitkeep
 screenshots/
+tmp/

@@ -37,3 +37,12 @@ docker compose up --build -d
 docker stats --no-stream l5-train-1
 curl http://localhost:8080/wyniki.txt
 ```
+
+## Zadanie 5 - ograniczenie kontekstu budowania
+
+Plik `.dockerignore` wyklucza dane, modele, środowisko wirtualne i pliki tymczasowe. Zmniejsza to kontekst wysyłany do Dockera i zapobiega przypadkowemu dołączeniu niepotrzebnych plików do budowania obrazu.
+
+```bash
+docker image inspect ium-lab5:train --format '{{.Size}}'
+docker compose build --no-cache train
+```
