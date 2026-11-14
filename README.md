@@ -46,3 +46,12 @@ Plik `.dockerignore` wyklucza dane, modele, środowisko wirtualne i pliki tymcza
 docker image inspect ium-lab5:train --format '{{.Size}}'
 docker compose build --no-cache train
 ```
+
+## Zadanie 6 - komunikacja między usługami
+
+Usługa `visualize` pobiera plik `status.json` z adresu `http://train:5000`. Nazwa `train` jest nazwą usługi rozpoznawaną w wewnętrznej sieci Docker Compose. Kontrola stanu powoduje uruchomienie serwera wyników dopiero po zakończeniu treningu.
+
+```bash
+docker compose logs train visualize
+curl http://localhost:8080/status.json
+```
