@@ -9,3 +9,12 @@ Plik `Dockerfile` tworzy obraz na podstawie `python:3.11-slim`. Zależności z `
 ```bash
 docker build -t ium-lab5:base .
 ```
+
+## Zadanie 2 - usługa treningowa i wolumeny
+
+Usługa `train` wczytuje ustawienia z `.env.train`. Katalogi `data`, `models` i `results` są montowane z hosta do kontenera.
+
+```bash
+docker compose build train
+docker compose config
+```

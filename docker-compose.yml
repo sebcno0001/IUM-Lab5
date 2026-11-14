@@ -1,0 +1,13 @@
+services:
+  train:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: ium-lab5:train
+    env_file:
+      - .env.train
+    # Dane, model i wyniki pozostają na hoście po usunięciu kontenera.
+    volumes:
+      - ./data:/app/data
+      - ./models:/app/models
+      - ./results:/app/results
